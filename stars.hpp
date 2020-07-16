@@ -23,7 +23,7 @@ public:
     virtual void draw() { drawStar(); }
     virtual void update(long timeSpan);
 protected:
-    GLfloat alohaSelf, alpha;
+    GLfloat alphaSelf, alpha;
 
 };
 
