@@ -59,7 +59,7 @@ Star * stars[STARS_NUM];
 
 SolarSystem::SolarSystem() {
 
-    // ??????????????????????
+    // 定义视角
     viewX = 0;
     viewY = REST_Y;
     viewZ = REST_Z;
@@ -147,7 +147,7 @@ void SolarSystem::onUpdate(){
 #define OFFSET 20
 void SolarSystem::onKeyboard(unsigned char key, int x, int y){
 switch (key)    {
-        case 'w': viewY += OFFSET; break;
+        case 'w': viewY += OFFSET; break;   // 摄像机Y轴位置增加
         case 's': viewZ += OFFSET; break;
         case 'S': viewZ -= OFFSET; break;
         case 'a': viewX -= OFFSET; break;

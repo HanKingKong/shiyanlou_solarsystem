@@ -15,7 +15,7 @@ public:
 
     Star(GLfloat radius, GLfloat distance,
           GLfloat speed,  GLfloat selfSpeed,
-          Star* parentStar);
+          Star* parent);
 
     // 对一般的星球的移动、旋转等活动进行绘制
     void drawStar();
@@ -34,7 +34,7 @@ public:
     // 构造函数
     Planet(GLfloat radius, GLfloat distance,
            GLfloat speed,  GLfloat selfSpeed,
-           Star* parentStar, GLfloat rgbColor[3]);
+           Star* parent, GLfloat rgbColor[3]);
     // 增加对具备自身材质的行星绘制材质
     void drawPlanet();
 
@@ -46,7 +46,7 @@ class LightPlanet : public Planet {
 public:
     LightPlanet(GLfloat radius, GLfloat distance,
                 GLfloat speed,  GLfloat selfSpeed,
-                Star* parentStar, GLfloat rgbColor[]);
+                Star* parent, GLfloat rgbColor[]);
 
     void drawLight();
     virtual void draw() { drawLight(); drawPlanet(); drawStar(); }

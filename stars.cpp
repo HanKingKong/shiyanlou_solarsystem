@@ -48,7 +48,7 @@ void Star::drawStar(){
 		// 绕z轴旋转 alpha
 		glRotatef(alpha, 0,0,1);
 		// x轴方向平移distance, y,z方向不变
-		glTranslatef(parentStar->distance, 0.0, 0.0);
+		glTranslatef(distance, 0.0, 0.0);
 
 		// 自转
 		glRotatef(alphaSelf, 0, 0, 1);
@@ -60,6 +60,7 @@ void Star::drawStar(){
 
 	}
 	// 恢复绘制前的矩阵环境
+	glPopMatrix();
 
 
 }
@@ -71,8 +72,8 @@ void Star::update(long timeSpan){
 
 Planet::Planet(GLfloat radius, GLfloat distance,
            GLfloat speed,  GLfloat selfSpeed,
-           Star* parentStar, GLfloat rgbColor[3]) :
-Star(radius, distance, speed, selfSpeed, parentStar){
+           Star* parent, GLfloat rgbColor[3]) :
+Star(radius, distance, speed, selfSpeed, parent){
     rgbaColor[0] = rgbColor[0];
     rgbaColor[1] = rgbColor[1];
     rgbaColor[2] = rgbColor[2];
@@ -95,8 +96,8 @@ void Planet::drawPlanet(){
 };
 
 LightPlanet::LightPlanet(GLfloat radius,    GLfloat distance, GLfloat speed,
-                         GLfloat selfSpeed, Star* parentStar,   GLfloat rgbColor[3]) :
-Planet(radius, distance, speed, selfSpeed, parentStar, rgbColor) {
+                         GLfloat selfSpeed, Star* parent,   GLfloat rgbColor[3]) :
+Planet(radius, distance, speed, selfSpeed, parent, rgbColor) {
     // TODO:
 }
 
